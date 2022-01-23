@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222327;
+    font-family: sans-serif;
+}
+.navbar{
+    position: relative;
+    width: 400px;
+    height: 70px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.navbar ul{
+    display: flex;
+    width: 350px;
+}
+.navbar ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 3;
+}
+.navbar ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-decoration: none;
+}
+.navbar>ul>li>a>.icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #222327;
+}
+.navbar>ul>.active>a>.icon{
+    transform: translateY(-35px);
+    color: #646464;
+}
+.navbar>ul>li>a>.text{
+    position: absolute;
+    color: #222327;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+
+}
+.navbar>ul>.active>a>.text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+.activebg{
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    border-radius: 50%;
+    border: 6px solid #222327;
+}
+.activebg::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 0 0 #222327;
+}
+.activebg::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -10px 0 0 #222327;
+}
+.navbar>ul>li:nth-child(1).active ~ .activebg{
+    transform: translateX(calc(70px * 0));
+    transition: 0.5s;
+}
+.navbar>ul>li:nth-child(2).active ~ .activebg{
+    transform: translateX(calc(70px * 1));
+    transition: 0.5s;
+}
+.navbar>ul>li:nth-child(3).active ~ .activebg{
+    transform: translateX(calc(70px * 2));
+    transition: 0.5s;
+}
+.navbar>ul>li:nth-child(4).active ~ .activebg{
+    transform: translateX(calc(70px * 3));
+    transition: 0.5s;
+}
+.navbar>ul>li:nth-child(5).active ~ .activebg{
+    transform: translateX(calc(70px * 4));
+    transition: 0.5s;
+}
+
